@@ -6,6 +6,7 @@ import uuid
 from contextlib import contextmanager
 from pathlib import Path
 from typing import Optional
+from fastapi.middleware.cors import CORSMiddleware
 
 from fastapi import (
     Depends, FastAPI, File, Form, HTTPException, Query, UploadFile
@@ -21,6 +22,13 @@ MAX_UPLOAD_BYTES = 20 * 1024 * 1024
 FILES_DIR.mkdir(parents=True, exist_ok=True)
 
 app = FastAPI(title="TrustVault", version="1.0")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://trustvault-frontend-uqi4.onrender.com"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 bearer = HTTPBearer(auto_error=False)
 
 

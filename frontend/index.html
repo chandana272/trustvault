@@ -1,52 +1,171 @@
-
+﻿
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TrustVault | Secure Document Sharing</title>
+
 <style>
-:root{--primary:#2548c7;--dark:#172554;--bg:#f4f6fb;--text:#1e293b;--muted:#64748b;--border:#e2e8f0}
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--text)}
-header{background:var(--dark);color:white;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.brand{font-size:23px;font-weight:bold}
-.brand span{color:#93c5fd}
-header button{width:auto;background:#334477}
-main{max-width:1150px;margin:28px auto;padding:0 20px}
-.hero{background:linear-gradient(120deg,#1e3a8a,#3b60d4);color:white;padding:30px;border-radius:16px;margin-bottom:22px}
-.hero h1{margin:0 0 10px;font-size:30px}
-.hero p{line-height:1.6;color:#e0e7ff}
-.status{font-size:13px;color:#dbeafe}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}
-.card{background:white;border:1px solid var(--border);border-radius:13px;padding:22px;box-shadow:0 4px 15px #0f172a08}
-.card h2{font-size:19px;margin:0 0 17px}
-input,select{width:100%;padding:12px;margin:6px 0 12px;border:1px solid #cbd5e1;border-radius:7px;font-size:14px;background:white}
-button{border:0;border-radius:7px;padding:12px 15px;background:var(--primary);color:white;font-weight:bold;cursor:pointer}
-button:hover{filter:brightness(.92)}
-.action{width:100%;margin-top:5px}
-.secondary{background:#e8edff;color:#243e9a}
-.danger{background:#b91c1c}
-.hidden{display:none!important}
-#notice{margin:18px 0;padding:12px;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere}
-#notice:empty{display:none}
-#notice.error{background:#fee2e2;color:#991b1b}
-#notice.success{background:#dcfce7;color:#166534}
-.document{padding:12px 0;border-bottom:1px solid var(--border);overflow-wrap:anywhere}
-.document:last-child{border-bottom:0}
-.docname{font-weight:bold;margin-bottom:5px}
-.meta{font-size:13px;color:var(--muted);line-height:1.6}
-.doc-actions{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
-.doc-actions button{width:auto;padding:8px 12px;font-size:12px}
-#documents{margin-top:12px}
-.small{font-size:13px;color:var(--muted);line-height:1.6}
-footer{text-align:center;color:var(--muted);padding:28px 12px;font-size:13px}
-@media(max-width:550px){header{padding:16px;flex-wrap:wrap}main{padding:0 12px;margin:18px auto}.hero{padding:22px}.hero h1{font-size:25px}}
+:root {
+  --primary: #2548c7;
+  --dark: #172554;
+  --bg: #f4f6fb;
+  --text: #1e293b;
+  --muted: #64748b;
+  --border: #e2e8f0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header {
+  background: var(--dark);
+  color: white;
+  padding: 18px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.brand { font-size: 23px; font-weight: bold; }
+.brand span { color: #93c5fd; }
+header button { width: auto; background: #334477; }
+
+main {
+  max-width: 1150px;
+  margin: 28px auto;
+  padding: 0 20px;
+}
+
+.hero {
+  background: linear-gradient(120deg, #1e3a8a, #3b60d4);
+  color: white;
+  padding: 30px;
+  border-radius: 16px;
+  margin-bottom: 22px;
+}
+
+.hero h1 { margin: 0 0 10px; font-size: 30px; }
+.hero p { line-height: 1.6; color: #e0e7ff; }
+.status { font-size: 13px; color: #dbeafe; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  padding: 22px;
+  box-shadow: 0 4px 15px #0f172a08;
+}
+
+.card h2 { font-size: 19px; margin: 0 0 17px; }
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 6px 0 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font-size: 14px;
+  background: white;
+}
+
+button {
+  border: 0;
+  border-radius: 7px;
+  padding: 12px 15px;
+  background: var(--primary);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover { filter: brightness(.92); }
+.action { width: 100%; margin-top: 5px; }
+.secondary { background: #e8edff; color: #243e9a; }
+.danger { background: #b91c1c; }
+.hidden { display: none !important; }
+
+#notice {
+  margin: 18px 0;
+  padding: 12px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+#notice:empty { display: none; }
+#notice.error { background: #fee2e2; color: #991b1b; }
+#notice.success { background: #dcfce7; color: #166534; }
+
+.document {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  overflow-wrap: anywhere;
+}
+
+.document:last-child { border-bottom: 0; }
+.docname { font-weight: bold; margin-bottom: 5px; }
+
+.meta {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.doc-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.doc-actions button {
+  width: auto;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+#documents { margin-top: 12px; }
+
+.small {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 28px 12px;
+  font-size: 13px;
+}
+
+@media (max-width: 550px) {
+  header { padding: 16px; flex-wrap: wrap; }
+  main { padding: 0 12px; margin: 18px auto; }
+  .hero { padding: 22px; }
+  .hero h1 { font-size: 25px; }
+}
 </style>
 </head>
+
 <body>
 <header>
-  <div class="brand">🔐 Trust<span>Vault</span></div>
+  <div class="brand">&#128274; Trust<span>Vault</span></div>
   <div>
     <span id="userLabel" class="small" style="color:white"></span>
     <button id="logoutBtn" class="hidden" onclick="logout()">Log out</button>
@@ -67,9 +186,14 @@ footer{text-align:center;color:var(--muted);padding:28px 12px;font-size:13px}
       <h2>Sign in</h2>
       <form id="loginForm">
         <label for="loginEmail">Email</label>
-        <input id="loginEmail" type="email" autocomplete="email" required placeholder="you@example.com">
+        <input id="loginEmail" type="email" autocomplete="email"
+               required placeholder="you@example.com">
+
         <label for="loginPassword">Password</label>
-        <input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Your password">
+        <input id="loginPassword" type="password"
+               autocomplete="current-password" required
+               placeholder="Your password">
+
         <button class="action" type="submit">Sign in</button>
       </form>
     </div>
@@ -78,16 +202,25 @@ footer{text-align:center;color:var(--muted);padding:28px 12px;font-size:13px}
       <h2>Create an account</h2>
       <form id="registerForm">
         <label for="registerName">Full name</label>
-        <input id="registerName" required maxlength="100" placeholder="Your name">
+        <input id="registerName" required maxlength="100"
+               placeholder="Your name">
+
         <label for="registerEmail">Email</label>
-        <input id="registerEmail" type="email" autocomplete="email" required placeholder="you@example.com">
+        <input id="registerEmail" type="email"
+               autocomplete="email" required
+               placeholder="you@example.com">
+
         <label for="registerPassword">Password (minimum 8 characters)</label>
-        <input id="registerPassword" type="password" autocomplete="new-password" minlength="8" required placeholder="Create a password">
+        <input id="registerPassword" type="password"
+               autocomplete="new-password" minlength="8"
+               required placeholder="Create a password">
+
         <label for="registerRole">Account role</label>
         <select id="registerRole">
           <option value="owner">Owner</option>
           <option value="viewer">Viewer</option>
         </select>
+
         <button class="action" type="submit">Register</button>
         <p class="small">Public registration cannot create admin accounts.</p>
       </form>
@@ -101,6 +234,7 @@ footer{text-align:center;color:var(--muted);padding:28px 12px;font-size:13px}
         <form id="uploadForm">
           <label for="fileInput">Choose a file</label>
           <input id="fileInput" type="file" required>
+
           <label for="category">Category</label>
           <select id="category">
             <option value="General">General</option>
@@ -109,6 +243,7 @@ footer{text-align:center;color:var(--muted);padding:28px 12px;font-size:13px}
             <option value="Personal">Personal</option>
             <option value="Legal">Legal</option>
           </select>
+
           <button class="action" type="submit">Upload document</button>
         </form>
         <p class="small">The backend must validate file type, size, and user permissions.</p>
@@ -121,7 +256,12 @@ footer{text-align:center;color:var(--muted);padding:28px 12px;font-size:13px}
           <input id="searchInput" placeholder="Search documents...">
           <button class="action" type="submit">Search</button>
         </form>
-        <button id="refreshBtn" class="action secondary" type="button" onclick="loadDocuments()">Refresh documents</button>
+
+        <button id="refreshBtn" class="action secondary"
+                type="button" onclick="loadDocuments()">
+          Refresh documents
+        </button>
+
         <p class="small">Only documents authorized for your account should be returned.</p>
       </div>
 
@@ -139,10 +279,11 @@ footer{text-align:center;color:var(--muted);padding:28px 12px;font-size:13px}
   </section>
 </main>
 
-<footer>TrustVault © 2026 · Secure document sharing and audit trail</footer>
+<footer>TrustVault &copy; 2026 &middot; Secure document sharing and audit trail</footer>
 
 <script>
-const API = "/api";
+const API = "https://trustvault-api-01kt.onrender.com/api";
+
 let token = "";
 let currentUser = null;
 
@@ -155,7 +296,10 @@ function notify(message, type = "success") {
 
 async function request(path, options = {}) {
   const headers = new Headers(options.headers || {});
-  if (token) headers.set("Authorization", "Bearer " + token);
+
+  if (token) {
+    headers.set("Authorization", "Bearer " + token);
+  }
 
   const response = await fetch(API + path, {
     ...options,
@@ -171,55 +315,72 @@ async function request(path, options = {}) {
     const detail = typeof data === "object" ? data.detail : data;
     throw new Error(detail || `Request failed (${response.status})`);
   }
+
   return data;
 }
 
 async function checkBackend() {
   try {
     await request("/health");
-    $("apiStatus").textContent = "● Backend connected";
-  } catch {
-    $("apiStatus").textContent = "Backend unavailable — start the FastAPI server.";
+    $("apiStatus").textContent = "Backend connected";
+  } catch (error) {
+    $("apiStatus").textContent =
+      "Backend unavailable. Check the API deployment and CORS settings.";
   }
 }
 
 function showDashboard(user) {
   currentUser = user;
+
   $("authSection").classList.add("hidden");
   $("dashboard").classList.remove("hidden");
   $("logoutBtn").classList.remove("hidden");
-  $("userLabel").textContent = user.name + " · " + user.role;
+
+  $("userLabel").textContent =
+    (user.name || user.email || "User") + " | " + (user.role || "account");
+
   $("accountDetails").textContent =
-    `Name: ${user.name}\nEmail: ${user.email}\nRole: ${user.role}`;
+    `Name: ${user.name || "Not provided"}\n` +
+    `Email: ${user.email || "Not provided"}\n` +
+    `Role: ${user.role || "Not provided"}`;
 }
 
 function logout() {
   token = "";
   currentUser = null;
+
   $("authSection").classList.remove("hidden");
   $("dashboard").classList.add("hidden");
   $("logoutBtn").classList.add("hidden");
+
   $("userLabel").textContent = "";
   $("documents").textContent = "Sign in to load documents.";
   $("loginPassword").value = "";
+
   notify("You have signed out.");
 }
 
 $("loginForm").addEventListener("submit", async event => {
   event.preventDefault();
+
   try {
     const data = await request("/auth/login", {
       method: "POST",
-      headers: {"Content-Type": "application/json"},
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         email: $("loginEmail").value.trim(),
         password: $("loginPassword").value
       })
     });
 
+    if (!data.access_token || !data.user) {
+      throw new Error("The server response is missing login information.");
+    }
+
     token = data.access_token;
     showDashboard(data.user);
     notify("Signed in successfully.");
+
     await loadDocuments();
   } catch (error) {
     notify("Sign-in failed: " + error.message, "error");
@@ -228,10 +389,11 @@ $("loginForm").addEventListener("submit", async event => {
 
 $("registerForm").addEventListener("submit", async event => {
   event.preventDefault();
+
   try {
     const data = await request("/auth/register", {
       method: "POST",
-      headers: {"Content-Type": "application/json"},
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         name: $("registerName").value.trim(),
         email: $("registerEmail").value.trim(),
@@ -241,6 +403,7 @@ $("registerForm").addEventListener("submit", async event => {
     });
 
     notify(data.message || "Registration successful. Please sign in.");
+
     $("loginEmail").value = $("registerEmail").value.trim();
     $("loginPassword").value = $("registerPassword").value;
     $("registerForm").reset();
@@ -251,9 +414,16 @@ $("registerForm").addEventListener("submit", async event => {
 
 $("uploadForm").addEventListener("submit", async event => {
   event.preventDefault();
+
   const file = $("fileInput").files[0];
-  if (!file) return notify("Choose a document first.", "error");
-  if (!token) return notify("Please sign in first.", "error");
+
+  if (!file) {
+    return notify("Choose a document first.", "error");
+  }
+
+  if (!token) {
+    return notify("Please sign in first.", "error");
+  }
 
   const form = new FormData();
   form.append("file", file);
@@ -264,8 +434,10 @@ $("uploadForm").addEventListener("submit", async event => {
       method: "POST",
       body: form
     });
+
     notify(data.message || "Upload request completed.");
     $("uploadForm").reset();
+
     await loadDocuments();
   } catch (error) {
     notify("Upload failed: " + error.message, "error");
@@ -292,25 +464,31 @@ function renderDocuments(items) {
 
     const name = document.createElement("div");
     name.className = "docname";
-    name.textContent = doc.filename || doc.name || doc.title || "Untitled document";
+    name.textContent =
+      doc.filename || doc.name || doc.title || "Untitled document";
+
     item.appendChild(name);
 
     const meta = document.createElement("div");
     meta.className = "meta";
+
     meta.textContent = [
       doc.category ? "Category: " + doc.category : "",
       doc.owner_name ? "Owner: " + doc.owner_name : "",
       doc.created_at ? "Created: " + doc.created_at : "",
       doc.id != null ? "ID: " + doc.id : ""
-    ].filter(Boolean).join(" · ");
+    ].filter(Boolean).join(" | ");
+
     item.appendChild(meta);
 
     if (doc.id != null) {
       const actions = document.createElement("div");
       actions.className = "doc-actions";
+
       const download = document.createElement("button");
       download.textContent = "Download";
       download.addEventListener("click", () => downloadDocument(doc.id));
+
       actions.appendChild(download);
       item.appendChild(actions);
     }
@@ -326,10 +504,12 @@ async function loadDocuments() {
   }
 
   $("documents").textContent = "Loading...";
+
   const query = encodeURIComponent($("searchInput").value.trim());
 
   try {
     const data = await request("/documents/?search=" + query);
+
     const items = Array.isArray(data)
       ? data
       : (data.documents || data.items || []);
@@ -344,9 +524,14 @@ async function loadDocuments() {
 
 async function downloadDocument(id) {
   try {
-    const response = await fetch(API + "/documents/" + encodeURIComponent(id) + "/download", {
-      headers: {Authorization: "Bearer " + token}
-    });
+    const response = await fetch(
+      API + "/documents/" + encodeURIComponent(id) + "/download",
+      {
+        headers: {
+          Authorization: "Bearer " + token
+        }
+      }
+    );
 
     if (!response.ok) {
       const data = await response.json().catch(() => ({}));
@@ -356,9 +541,13 @@ async function downloadDocument(id) {
     const blob = await response.blob();
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
+
     a.href = url;
     a.download = "document-" + id;
+    document.body.appendChild(a);
     a.click();
+    a.remove();
+
     URL.revokeObjectURL(url);
     notify("Download completed.");
   } catch (error) {
