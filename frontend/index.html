@@ -5,170 +5,39 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TrustVault | Secure Document Sharing</title>
-
 <style>
-:root {
-  --primary: #2548c7;
-  --dark: #172554;
-  --bg: #f4f6fb;
-  --text: #1e293b;
-  --muted: #64748b;
-  --border: #e2e8f0;
-}
-
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
-
-header {
-  background: var(--dark);
-  color: white;
-  padding: 18px 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-}
-
-.brand { font-size: 23px; font-weight: bold; }
-.brand span { color: #93c5fd; }
-header button { width: auto; background: #334477; }
-
-main {
-  max-width: 1150px;
-  margin: 28px auto;
-  padding: 0 20px;
-}
-
-.hero {
-  background: linear-gradient(120deg, #1e3a8a, #3b60d4);
-  color: white;
-  padding: 30px;
-  border-radius: 16px;
-  margin-bottom: 22px;
-}
-
-.hero h1 { margin: 0 0 10px; font-size: 30px; }
-.hero p { line-height: 1.6; color: #e0e7ff; }
-.status { font-size: 13px; color: #dbeafe; }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 18px;
-}
-
-.card {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 13px;
-  padding: 22px;
-  box-shadow: 0 4px 15px #0f172a08;
-}
-
-.card h2 { font-size: 19px; margin: 0 0 17px; }
-
-input, select {
-  width: 100%;
-  padding: 12px;
-  margin: 6px 0 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 7px;
-  font-size: 14px;
-  background: white;
-}
-
-button {
-  border: 0;
-  border-radius: 7px;
-  padding: 12px 15px;
-  background: var(--primary);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover { filter: brightness(.92); }
-.action { width: 100%; margin-top: 5px; }
-.secondary { background: #e8edff; color: #243e9a; }
-.danger { background: #b91c1c; }
-.hidden { display: none !important; }
-
-#notice {
-  margin: 18px 0;
-  padding: 12px;
-  border-radius: 8px;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-
-#notice:empty { display: none; }
-#notice.error { background: #fee2e2; color: #991b1b; }
-#notice.success { background: #dcfce7; color: #166534; }
-
-.document {
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border);
-  overflow-wrap: anywhere;
-}
-
-.document:last-child { border-bottom: 0; }
-.docname { font-weight: bold; margin-bottom: 5px; }
-
-.meta {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-.doc-actions {
-  display: flex;
-  gap: 8px;
-  margin-top: 8px;
-  flex-wrap: wrap;
-}
-
-.doc-actions button {
-  width: auto;
-  padding: 8px 12px;
-  font-size: 12px;
-}
-
-#documents { margin-top: 12px; }
-
-.small {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-footer {
-  text-align: center;
-  color: var(--muted);
-  padding: 28px 12px;
-  font-size: 13px;
-}
-
-@media (max-width: 550px) {
-  header { padding: 16px; flex-wrap: wrap; }
-  main { padding: 0 12px; margin: 18px auto; }
-  .hero { padding: 22px; }
-  .hero h1 { font-size: 25px; }
-}
+:root{--primary:#2548c7;--dark:#172554;--bg:#f4f6fb;--text:#1e293b;--muted:#64748b;--border:#e2e8f0}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--text)}
+header{background:var(--dark);color:white;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-size:23px;font-weight:bold}.brand span{color:#93c5fd}
+main{max-width:1150px;margin:28px auto;padding:0 20px}
+.hero{background:linear-gradient(120deg,#1e3a8a,#3b60d4);color:white;padding:28px;border-radius:16px;margin-bottom:20px}
+.hero h1{margin:0 0 10px}.hero p{line-height:1.6;color:#e0e7ff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:white;border:1px solid var(--border);border-radius:13px;padding:22px;box-shadow:0 4px 15px #0f172a08}
+.card h2{font-size:19px;margin:0 0 17px}
+input,select{width:100%;padding:12px;margin:6px 0 12px;border:1px solid #cbd5e1;border-radius:7px;font-size:14px;background:white}
+button{border:0;border-radius:7px;padding:11px 14px;background:var(--primary);color:white;font-weight:bold;cursor:pointer}
+button:disabled{opacity:.6;cursor:wait}
+.action{width:100%;margin-top:5px}.secondary{background:#e8edff;color:#243e9a}
+.hidden{display:none!important}
+#notice{margin:18px 0;padding:12px;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere}
+#notice:empty{display:none}#notice.error{background:#fee2e2;color:#991b1b}
+#notice.success{background:#dcfce7;color:#166534}
+.small,.meta{font-size:13px;color:var(--muted);line-height:1.6}
+.document{padding:14px 0;border-bottom:1px solid var(--border);overflow-wrap:anywhere}
+.docname{font-weight:bold;margin-bottom:5px}
+.doc-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+footer{text-align:center;color:var(--muted);padding:28px 12px;font-size:13px}
+@media(max-width:550px){main{padding:0 12px;margin:18px auto}.hero{padding:22px}header{padding:16px}}
 </style>
 </head>
-
 <body>
 <header>
-  <div class="brand">&#128274; Trust<span>Vault</span></div>
-  <div>
-    <span id="userLabel" class="small" style="color:white"></span>
-    <button id="logoutBtn" class="hidden" onclick="logout()">Log out</button>
+  <div class="brand">🔒 Trust<span>Vault</span></div>
+  <div><span id="userLabel"></span>
+    <button id="logoutBtn" class="hidden" onclick="logout()">Sign out</button>
   </div>
 </header>
 
@@ -176,7 +45,7 @@ footer {
   <section class="hero">
     <h1>Your documents. Your control.</h1>
     <p>Secure document sharing with role-based access, permission management, and activity tracking.</p>
-    <div id="apiStatus" class="status">Checking backend connection...</div>
+    <div id="apiStatus" style="font-size:13px">Connecting to backend...</div>
   </section>
 
   <div id="notice" role="status" aria-live="polite"></div>
@@ -186,41 +55,26 @@ footer {
       <h2>Sign in</h2>
       <form id="loginForm">
         <label for="loginEmail">Email</label>
-        <input id="loginEmail" type="email" autocomplete="email"
-               required placeholder="you@example.com">
-
+        <input id="loginEmail" type="email" autocomplete="username" required>
         <label for="loginPassword">Password</label>
-        <input id="loginPassword" type="password"
-               autocomplete="current-password" required
-               placeholder="Your password">
-
+        <input id="loginPassword" type="password" autocomplete="current-password" required>
         <button class="action" type="submit">Sign in</button>
       </form>
     </div>
-
     <div class="card">
       <h2>Create an account</h2>
       <form id="registerForm">
         <label for="registerName">Full name</label>
-        <input id="registerName" required maxlength="100"
-               placeholder="Your name">
-
+        <input id="registerName" required maxlength="100">
         <label for="registerEmail">Email</label>
-        <input id="registerEmail" type="email"
-               autocomplete="email" required
-               placeholder="you@example.com">
-
+        <input id="registerEmail" type="email" required>
         <label for="registerPassword">Password (minimum 8 characters)</label>
-        <input id="registerPassword" type="password"
-               autocomplete="new-password" minlength="8"
-               required placeholder="Create a password">
-
+        <input id="registerPassword" type="password" minlength="8" required>
         <label for="registerRole">Account role</label>
         <select id="registerRole">
           <option value="owner">Owner</option>
           <option value="viewer">Viewer</option>
         </select>
-
         <button class="action" type="submit">Register</button>
         <p class="small">Public registration cannot create admin accounts.</p>
       </form>
@@ -229,26 +83,19 @@ footer {
 
   <section id="dashboard" class="hidden">
     <div class="grid">
-      <div class="card">
+      <div id="uploadCard" class="card">
         <h2>Upload document</h2>
         <form id="uploadForm">
-          <label for="fileInput">Choose a file</label>
+          <label for="fileInput">Choose file</label>
           <input id="fileInput" type="file" required>
-
           <label for="category">Category</label>
           <select id="category">
-            <option value="General">General</option>
-            <option value="Academic">Academic</option>
-            <option value="Work">Work</option>
-            <option value="Personal">Personal</option>
-            <option value="Legal">Legal</option>
+            <option>General</option><option>Academic</option>
+            <option>Work</option><option>Personal</option><option>Legal</option>
           </select>
-
           <button class="action" type="submit">Upload document</button>
         </form>
-        <p class="small">The backend must validate file type, size, and user permissions.</p>
       </div>
-
       <div class="card">
         <h2>Find documents</h2>
         <form id="searchForm">
@@ -256,304 +103,313 @@ footer {
           <input id="searchInput" placeholder="Search documents...">
           <button class="action" type="submit">Search</button>
         </form>
-
-        <button id="refreshBtn" class="action secondary"
-                type="button" onclick="loadDocuments()">
-          Refresh documents
-        </button>
-
-        <p class="small">Only documents authorized for your account should be returned.</p>
+        <button class="action secondary" type="button" onclick="loadDocuments()">Refresh documents</button>
       </div>
-
       <div class="card">
         <h2>Account details</h2>
-        <p id="accountDetails" class="meta">Sign in to view your account.</p>
-        <p class="small">Permissions are enforced by the backend, not by the frontend interface.</p>
+        <p id="accountDetails" class="meta"></p>
+        <p id="roleNotice" class="small"></p>
       </div>
+    </div>
+
+    <div id="sharingCard" class="card" style="margin-top:18px">
+      <h2>Manage document access</h2>
+      <p class="small">Owners can grant or revoke read access for a viewer.</p>
+      <form id="grantForm">
+        <label for="shareDocId">Document ID</label>
+        <input id="shareDocId" required>
+        <label for="shareUsername">Viewer username</label>
+        <input id="shareUsername" required>
+        <button class="action" type="submit">Grant view access</button>
+      </form>
+      <form id="revokeForm" style="margin-top:14px">
+        <label for="revokeDocId">Document ID</label>
+        <input id="revokeDocId" required>
+        <label for="revokeUsername">Viewer username</label>
+        <input id="revokeUsername" required>
+        <button class="action secondary" type="submit">Revoke access</button>
+      </form>
     </div>
 
     <div class="card" style="margin-top:18px">
-      <h2>Your documents</h2>
-      <div id="documents" class="meta">Sign in to load documents.</div>
+      <h2>Documents available to you</h2>
+      <div id="documents" class="meta">Sign in to view documents.</div>
     </div>
   </section>
 </main>
-
-<footer>TrustVault &copy; 2026 &middot; Secure document sharing and audit trail</footer>
+<footer>TrustVault © 2026 · Secure document sharing and audit trail</footer>
 
 <script>
-const API = "https://trustvault-api-01kt.onrender.com/api";
+const API="https://trustvault-api-01kt.onrender.com/api";
+let token="";
+let currentUser=null;
+const $=id=>document.getElementById(id);
 
-let token = "";
-let currentUser = null;
-
-const $ = id => document.getElementById(id);
-
-function notify(message, type = "success") {
-  $("notice").textContent = message;
-  $("notice").className = type;
+function notify(message,type="success"){
+  $("notice").textContent=typeof message==="string"?message:JSON.stringify(message);
+  $("notice").className=type;
 }
 
-async function request(path, options = {}) {
-  const headers = new Headers(options.headers || {});
-
-  if (token) {
-    headers.set("Authorization", "Bearer " + token);
+async function request(path,options={}){
+  const headers=new Headers(options.headers||{});
+  if(token) headers.set("Authorization","Bearer "+token);
+  const response=await fetch(API+path,{...options,headers});
+  const ct=response.headers.get("content-type")||"";
+  const data=ct.includes("application/json")?await response.json():await response.text();
+  if(!response.ok){
+    const detail=typeof data==="object"?data.detail:data;
+    throw new Error(typeof detail==="string"?detail:JSON.stringify(detail||`HTTP ${response.status}`));
   }
-
-  const response = await fetch(API + path, {
-    ...options,
-    headers
-  });
-
-  const contentType = response.headers.get("content-type") || "";
-  const data = contentType.includes("application/json")
-    ? await response.json()
-    : await response.text();
-
-  if (!response.ok) {
-    const detail = typeof data === "object" ? data.detail : data;
-    throw new Error(detail || `Request failed (${response.status})`);
-  }
-
   return data;
 }
 
-async function checkBackend() {
-  try {
+async function checkBackend(){
+  try{
     await request("/health");
-    $("apiStatus").textContent = "Backend connected";
-  } catch (error) {
-    $("apiStatus").textContent =
-      "Backend unavailable. Check the API deployment and CORS settings.";
+    $("apiStatus").textContent="Backend connected";
+  }catch{
+    $("apiStatus").textContent="Backend unavailable. Try refreshing in a few seconds.";
   }
 }
 
-function showDashboard(user) {
-  currentUser = user;
+function normalizeUser(data,email){
+  const u=data.user||data.account||data;
+  return {
+    username:u.username||u.name||u.full_name||email,
+    name:u.name||u.full_name||u.username||email,
+    email:u.email||email,
+    role:String(u.role||"").toLowerCase()
+  };
+}
 
+function showDashboard(user){
+  currentUser=user;
+  const owner=user.role==="owner";
   $("authSection").classList.add("hidden");
   $("dashboard").classList.remove("hidden");
   $("logoutBtn").classList.remove("hidden");
-
-  $("userLabel").textContent =
-    (user.name || user.email || "User") + " | " + (user.role || "account");
-
-  $("accountDetails").textContent =
-    `Name: ${user.name || "Not provided"}\n` +
-    `Email: ${user.email || "Not provided"}\n` +
-    `Role: ${user.role || "Not provided"}`;
+  $("userLabel").textContent=`${user.name} | ${user.role}`;
+  $("accountDetails").textContent=`Name: ${user.name}\nEmail: ${user.email}\nRole: ${user.role}`;
+  $("roleNotice").textContent=owner
+    ?"Owner: upload documents, download your authorized files, and manage sharing."
+    :"Viewer: view documents shared with you. Upload, download, and sharing controls are disabled.";
+  $("uploadCard").classList.toggle("hidden",!owner);
+  $("sharingCard").classList.toggle("hidden",!owner);
 }
 
-function logout() {
-  token = "";
-  currentUser = null;
-
+function logout(){
+  token="";
+  currentUser=null;
   $("authSection").classList.remove("hidden");
   $("dashboard").classList.add("hidden");
   $("logoutBtn").classList.add("hidden");
-
-  $("userLabel").textContent = "";
-  $("documents").textContent = "Sign in to load documents.";
-  $("loginPassword").value = "";
-
-  notify("You have signed out.");
+  $("userLabel").textContent="";
+  $("loginPassword").value="";
+  $("documents").textContent="Sign in to view documents.";
+  notify("Signed out successfully.");
 }
 
-$("loginForm").addEventListener("submit", async event => {
-  event.preventDefault();
-
-  try {
-    const data = await request("/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        email: $("loginEmail").value.trim(),
-        password: $("loginPassword").value
+$("registerForm").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const name=$("registerName").value.trim();
+  const email=$("registerEmail").value.trim();
+  const password=$("registerPassword").value;
+  try{
+    const result=await request("/auth/register",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        username:email.split("@")[0],
+        email,
+        full_name:name,
+        password,
+        role:$("registerRole").value
       })
     });
+    notify(typeof result==="string"?result:(result.message||"Registration successful. Please sign in."));
+    $("loginEmail").value=email;
+    $("loginPassword").value="";
+    $("registerForm").reset();
+  }catch(error){
+    notify("Registration failed: "+error.message,"error");
+  }
+});
 
-    if (!data.access_token || !data.user) {
-      throw new Error("The server response is missing login information.");
+$("loginForm").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const email=$("loginEmail").value.trim();
+  const password=$("loginPassword").value;
+  const button=$("loginForm").querySelector("button");
+  button.disabled=true;
+  button.textContent="Signing in...";
+  try{
+    // Use the login request format defined by the backend.
+    const data=await request("/auth/login",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({email,password})
+    });
+
+    const receivedToken=data.access_token||data.token;
+    if(!receivedToken){
+      throw new Error("Backend login response has no access_token. The backend login function must be checked.");
+    }
+    token=receivedToken;
+
+    let user;
+    if(data.user||data.account||data.role||data.username||data.full_name){
+      user=normalizeUser(data,email);
+    }else{
+      user=normalizeUser(await request("/me"),email);
     }
 
-    token = data.access_token;
-    showDashboard(data.user);
+    if(!user.role) throw new Error("The backend did not return the account role.");
+    showDashboard(user);
     notify("Signed in successfully.");
-
     await loadDocuments();
-  } catch (error) {
-    notify("Sign-in failed: " + error.message, "error");
+  }catch(error){
+    token="";
+    currentUser=null;
+    notify("Sign-in failed: "+error.message,"error");
+  }finally{
+    button.disabled=false;
+    button.textContent="Sign in";
   }
 });
 
-$("registerForm").addEventListener("submit", async event => {
-  event.preventDefault();
-
-  try {
-    const data = await request("/auth/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: $("registerName").value.trim(),
-        email: $("registerEmail").value.trim(),
-        password: $("registerPassword").value,
-        role: $("registerRole").value
-      })
-    });
-
-    notify(data.message || "Registration successful. Please sign in.");
-
-    $("loginEmail").value = $("registerEmail").value.trim();
-    $("loginPassword").value = $("registerPassword").value;
-    $("registerForm").reset();
-  } catch (error) {
-    notify("Registration failed: " + error.message, "error");
-  }
-});
-
-$("uploadForm").addEventListener("submit", async event => {
-  event.preventDefault();
-
-  const file = $("fileInput").files[0];
-
-  if (!file) {
-    return notify("Choose a document first.", "error");
-  }
-
-  if (!token) {
-    return notify("Please sign in first.", "error");
-  }
-
-  const form = new FormData();
-  form.append("file", file);
-  form.append("category", $("category").value);
-
-  try {
-    const data = await request("/documents/", {
-      method: "POST",
-      body: form
-    });
-
-    notify(data.message || "Upload request completed.");
+$("uploadForm").addEventListener("submit",async e=>{
+  e.preventDefault();
+  if(currentUser?.role!=="owner")return notify("Only owners can upload documents.","error");
+  const file=$("fileInput").files[0];
+  if(!file)return notify("Choose a file first.","error");
+  const form=new FormData();
+  form.append("file",file);
+  form.append("category",$("category").value);
+  try{
+    await request("/documents",{method:"POST",body:form});
+    notify("Upload completed.");
     $("uploadForm").reset();
-
     await loadDocuments();
-  } catch (error) {
-    notify("Upload failed: " + error.message, "error");
-  }
+  }catch(error){notify("Upload failed: "+error.message,"error");}
 });
 
-$("searchForm").addEventListener("submit", async event => {
-  event.preventDefault();
+$("searchForm").addEventListener("submit",async e=>{
+  e.preventDefault();
   await loadDocuments();
 });
 
-function renderDocuments(items) {
-  const container = $("documents");
-  container.replaceChildren();
-
-  if (!items.length) {
-    container.textContent = "No documents found.";
-    return;
+async function loadDocuments(){
+  if(!token)return notify("Please sign in first.","error");
+  $("documents").textContent="Loading documents...";
+  try{
+    const q=encodeURIComponent($("searchInput").value.trim());
+    const data=await request("/documents?search="+q);
+    const items=Array.isArray(data)?data:(data.documents||data.items||data.results||[]);
+    renderDocuments(items);
+  }catch(error){
+    $("documents").textContent="Unable to load documents.";
+    notify("Loading documents failed: "+error.message,"error");
   }
+}
 
-  for (const doc of items) {
-    const item = document.createElement("div");
-    item.className = "document";
+function renderDocuments(items){
+  const container=$("documents");
+  container.replaceChildren();
+  if(!items.length){container.textContent="No documents available.";return;}
+  const owner=currentUser?.role==="owner";
 
-    const name = document.createElement("div");
-    name.className = "docname";
-    name.textContent =
-      doc.filename || doc.name || doc.title || "Untitled document";
-
+  for(const doc of items){
+    const item=document.createElement("div");
+    item.className="document";
+    const name=document.createElement("div");
+    name.className="docname";
+    name.textContent=doc.filename||doc.name||doc.title||"Untitled document";
     item.appendChild(name);
 
-    const meta = document.createElement("div");
-    meta.className = "meta";
-
-    meta.textContent = [
-      doc.category ? "Category: " + doc.category : "",
-      doc.owner_name ? "Owner: " + doc.owner_name : "",
-      doc.created_at ? "Created: " + doc.created_at : "",
-      doc.id != null ? "ID: " + doc.id : ""
+    const meta=document.createElement("div");
+    meta.className="meta";
+    meta.textContent=[
+      doc.category&&"Category: "+doc.category,
+      (doc.owner_name||doc.owner)&&"Owner: "+(doc.owner_name||doc.owner),
+      doc.created_at&&"Created: "+doc.created_at,
+      doc.id!=null&&"ID: "+doc.id
     ].filter(Boolean).join(" | ");
-
     item.appendChild(meta);
 
-    if (doc.id != null) {
-      const actions = document.createElement("div");
-      actions.className = "doc-actions";
-
-      const download = document.createElement("button");
-      download.textContent = "Download";
-      download.addEventListener("click", () => downloadDocument(doc.id));
-
-      actions.appendChild(download);
-      item.appendChild(actions);
+    const actions=document.createElement("div");
+    actions.className="doc-actions";
+    if(doc.id!=null){
+      const view=document.createElement("button");
+      view.className="secondary";
+      view.textContent="View details";
+      view.onclick=()=>viewDocument(doc.id);
+      actions.appendChild(view);
+      if(owner){
+        const download=document.createElement("button");
+        download.textContent="Download";
+        download.onclick=()=>downloadDocument(doc.id);
+        actions.appendChild(download);
+      }
     }
-
+    if(actions.childElementCount)item.appendChild(actions);
     container.appendChild(item);
   }
 }
 
-async function loadDocuments() {
-  if (!token) {
-    notify("Please sign in first.", "error");
-    return;
-  }
-
-  $("documents").textContent = "Loading...";
-
-  const query = encodeURIComponent($("searchInput").value.trim());
-
-  try {
-    const data = await request("/documents/?search=" + query);
-
-    const items = Array.isArray(data)
-      ? data
-      : (data.documents || data.items || []);
-
-    renderDocuments(items);
-    notify("Document list updated.");
-  } catch (error) {
-    $("documents").textContent = "Could not load documents.";
-    notify("Loading documents failed: " + error.message, "error");
-  }
+async function viewDocument(id){
+  try{
+    const data=await request("/documents/"+encodeURIComponent(id));
+    notify("Document details:\n"+JSON.stringify(data,null,2));
+  }catch(error){notify("View failed: "+error.message,"error");}
 }
 
-async function downloadDocument(id) {
-  try {
-    const response = await fetch(
-      API + "/documents/" + encodeURIComponent(id) + "/download",
-      {
-        headers: {
-          Authorization: "Bearer " + token
-        }
-      }
-    );
-
-    if (!response.ok) {
-      const data = await response.json().catch(() => ({}));
-      throw new Error(data.detail || "Download failed");
+async function downloadDocument(id){
+  if(currentUser?.role!=="owner")return notify("Only owners can download documents.","error");
+  try{
+    const response=await fetch(API+"/documents/"+encodeURIComponent(id)+"/download",{
+      headers:{Authorization:"Bearer "+token}
+    });
+    if(!response.ok){
+      const data=await response.json().catch(()=>({}));
+      throw new Error(data.detail||"Download denied");
     }
-
-    const blob = await response.blob();
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-
-    a.href = url;
-    a.download = "document-" + id;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-
-    URL.revokeObjectURL(url);
+    const blob=await response.blob();
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement("a");
+    a.href=url;a.download="document-"+id;
+    document.body.appendChild(a);a.click();a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
     notify("Download completed.");
-  } catch (error) {
-    notify("Download failed: " + error.message, "error");
-  }
+  }catch(error){notify("Download failed: "+error.message,"error");}
 }
+
+$("grantForm").addEventListener("submit",async e=>{
+  e.preventDefault();
+  if(currentUser?.role!=="owner")return notify("Owner access required.","error");
+  const id=encodeURIComponent($("shareDocId").value.trim());
+  const username=$("shareUsername").value.trim();
+  try{
+    await request("/documents/"+id+"/permissions",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({username,permission:"read"})
+    });
+    notify("Permission granted.");
+  }catch(error){
+    notify("Grant failed: "+error.message+". Check the PermissionInput schema in the API docs.","error");
+  }
+});
+
+$("revokeForm").addEventListener("submit",async e=>{
+  e.preventDefault();
+  if(currentUser?.role!=="owner")return notify("Owner access required.","error");
+  const id=encodeURIComponent($("revokeDocId").value.trim());
+  const username=encodeURIComponent($("revokeUsername").value.trim());
+  try{
+    await request("/documents/"+id+"/permissions/"+username,{method:"DELETE"});
+    notify("Permission revoked.");
+  }catch(error){notify("Revoke failed: "+error.message,"error");}
+});
 
 checkBackend();
 </script>
